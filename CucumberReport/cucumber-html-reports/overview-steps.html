@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.tablesorter.min.js"></script>
+<script src="js/Chart.min.js"></script>
+<script src="js/moment.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<link rel="stylesheet" href="css/cucumber.css" type="text/css"/>
+<link rel="stylesheet" href="css/font-awesome.min.css"/>
+<link rel="shortcut icon" href="images/favicon.png"/>
+
+<script>
+$(document).ready(function() {
+    // this will tell tablesorter to try looking for the data-value attribute
+    // if present, it'll sort by that instead
+    // otherwise, it'll sort by the text content of the table cell
+    $("#tablesorter").tablesorter({
+        textAttribute: 'data-value',
+        // ignores the first row of the header, the 'scenario', 'steps', since
+        // sorting those doesn't make sense
+        selectorHeaders: '> thead tr:not(.dont-sort) th',
+        // use a stable sort
+        sortStable: true
+    });
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<title>Cucumber Reports (no 1) - Steps Overview</title>
+
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <p class="navbar-text navbar-left">Cucumber Report</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li role="presentation" ><a href="overview-features.html">Features</a></li>
+        <li role="presentation" ><a href="overview-tags.html">Tags</a></li>
+        <li role="presentation"     class="active" ><a href="overview-steps.html">Steps</a></li>
+        <li role="presentation" ><a href="overview-failures.html">Failures</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="col-md-5 col-md-offset-1">
+
+<table class="table table-bordered" id="build-info">
+  <thead>
+    <tr>
+      <th>Project</th>
+        <th>Number</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="info">
+      <td>SauceDemoAutomation</td>
+        <td>1</td>
+      <td>09 Nov 2024, 10:56</td>
+    </tr>
+  </tbody>
+</table>
+
+  </div>
+  <div class="col-md-3 col-md-offset-2">
+  </div>
+</div>
+
+
+<div id="report-lead" class="container-fluid">
+  <div class="col-md-10 col-md-offset-1">
+    <h2>Steps Statistics</h2>
+      <p>The following graph shows step statistics for this build. Below list is based on results.
+ step does not provide information about result then is not listed below.
+ Additionally @Before and @After are not counted because they are part of the scenarios, not steps.</p>
+  </div>
+</div>
+
+<div class="container-fluid" id="report">
+  <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <table id="tablesorter" class="stats-table table-hover">
+
+        <thead>
+          <tr class="header">
+            <th>Implementation</th>
+            <th>Occurrences</th>
+            <th>Average duration</th>
+            <th>Max duration</th>
+            <th>Total durations</th>
+            <th>Ratio</th>
+          </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+              <td class="location">com.automation.steps.Hooks.cleanUp()</td>
+              <td>3</td>
+              <td class="duration" data-value="310744933">0.310</td>
+              <td class="duration" data-value="310744933">0.931</td>
+              <td class="duration" data-value="932234800">0.932</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.setBodyFromWithValue(java.lang.String,java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="12787800">0.012</td>
+              <td class="duration" data-value="12787800">0.038</td>
+              <td class="duration" data-value="38363400">0.038</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.setBodyWithFieldsAnd(java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="46302566">0.046</td>
+              <td class="duration" data-value="46302566">0.132</td>
+              <td class="duration" data-value="138907700">0.138</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.set_body_from(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="6840833">0.006</td>
+              <td class="duration" data-value="6840833">0.011</td>
+              <td class="duration" data-value="20522500">0.020</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.set_header_to(java.lang.String,java.lang.String)</td>
+              <td>24</td>
+              <td class="duration" data-value="9355687">0.009</td>
+              <td class="duration" data-value="9355687">0.199</td>
+              <td class="duration" data-value="224536500">0.224</td>
+              <td class="failed">50.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.userPerformsDeleteCall()</td>
+              <td>3</td>
+              <td class="duration" data-value="174800">0.000</td>
+              <td class="duration" data-value="174800">0.000</td>
+              <td class="duration" data-value="524400">0.000</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.userPerformsPutCall()</td>
+              <td>3</td>
+              <td class="duration" data-value="436889066">0.436</td>
+              <td class="duration" data-value="436889066">1.310</td>
+              <td class="duration" data-value="1310667200">1.310</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.user_performs_post_call()</td>
+              <td>6</td>
+              <td class="duration" data-value="1914578833">1.914</td>
+              <td class="duration" data-value="1914578833">3.317</td>
+              <td class="duration" data-value="11487473000">11.487</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.RequestSteps.user_wants_to_call_endpoint(java.lang.String)</td>
+              <td>12</td>
+              <td class="duration" data-value="29285283">0.029</td>
+              <td class="duration" data-value="29285283">0.348</td>
+              <td class="duration" data-value="351423400">0.351</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.ResponseSteps.storeAt(java.lang.String,java.lang.String)</td>
+              <td>6</td>
+              <td class="duration" data-value="205380900">0.205</td>
+              <td class="duration" data-value="205380900">1.044</td>
+              <td class="duration" data-value="1232285400">1.232</td>
+              <td class="failed">66.67%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.ResponseSteps.verifyRequestBodySameAsResponseForPut()</td>
+              <td>3</td>
+              <td class="duration" data-value="2330300">0.002</td>
+              <td class="duration" data-value="2330300">0.006</td>
+              <td class="duration" data-value="6990900">0.006</td>
+              <td class="failed">33.33%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.ResponseSteps.verifyResponseBodyHasFiledIs(java.lang.String,java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="28117133">0.028</td>
+              <td class="duration" data-value="28117133">0.046</td>
+              <td class="duration" data-value="84351400">0.084</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.ResponseSteps.verifyResponseBodyHasSameDataAsRequestForPost()</td>
+              <td>3</td>
+              <td class="duration" data-value="208649466">0.208</td>
+              <td class="duration" data-value="208649466">0.592</td>
+              <td class="duration" data-value="625948400">0.625</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.ResponseSteps.verifyResponseSchemaWith(java.lang.String)</td>
+              <td>3</td>
+              <td class="duration" data-value="285806933">0.285</td>
+              <td class="duration" data-value="285806933">0.775</td>
+              <td class="duration" data-value="857420800">0.857</td>
+              <td class="passed">100.00%</td>
+            </tr>
+            <tr>
+              <td class="location">com.automation.steps.ResponseSteps.verify_status_code(int)</td>
+              <td>12</td>
+              <td class="duration" data-value="1213591">0.001</td>
+              <td class="duration" data-value="1213591">0.012</td>
+              <td class="duration" data-value="14563100">0.014</td>
+              <td class="failed">66.67%</td>
+            </tr>
+        </tbody>
+
+        <tfoot class="total">
+          <tr>
+            <td>15</td>
+            <td>90</td>
+            <td class="duration">0.192</td>
+            <td class="duration">11.487</td>
+            <td class="duration">17.326</td>
+            <td>Totals</td>
+          </tr>
+        </tfoot>
+
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<nav class="navbar navbar-default" id="footer">
+  <div class="container-fluid">
+    <p class="navbar-text navbar-right">
+        <small>generate Cucumber HTML reports via:&nbsp;</small>
+        <a class="navbar-link" href="https://github.com/jenkinsci/cucumber-reports-plugin">Jenkins Plugin</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-reporting">Standalone</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/cucumber-sandwich">Sandwich</a> |
+        <a class="navbar-link" href="https://github.com/damianszczepanik/maven-cucumber-reporting">Maven</a>
+        &nbsp;&nbsp;
+    </p>
+  </div>
+</nav>
+
+</body>
+</html>
